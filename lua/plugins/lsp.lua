@@ -12,6 +12,8 @@ return {
   {
     -- Main LSP Configuration
     'neovim/nvim-lspconfig',
+    lazy = true,
+    event = 'FileType',
     dependencies = {
       { 'mason-org/mason.nvim', opts = {} },
       'mason-org/mason-lspconfig.nvim',

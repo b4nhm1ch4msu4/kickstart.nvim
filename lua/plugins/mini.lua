@@ -1,5 +1,7 @@
 return {
   'echasnovski/mini.nvim',
+  lazy = true,
+  event = 'UIEnter',
   config = function()
     -- Better Around/Inside textobjects
     --
