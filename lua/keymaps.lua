@@ -18,6 +18,10 @@ map('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 map('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 map('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+map('n', '<Tab>', '<cmd>bnext<CR>', { desc = 'Move to next buffer' })
+map('n', '<S-Tab>', '<cmd>blast<CR>', { desc = 'Move to last buffer' })
+map('n', '<leader>x', '<cmd>bdelete<CR>', { desc = 'Delete current buffer' })
+
 -- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
 -- map("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })
 -- map("n", "<C-S-l>", "<C-w>L", { desc = "Move window to the right" })
