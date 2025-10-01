@@ -1,310 +1,118 @@
 return {
   'folke/snacks.nvim',
+  lazy = false,
   opts = {
     picker = {},
-    explorer = {},
     indent = {},
+    explorer = {},
   },
   keys = {
-    -- Top Pickers & Explorer
     {
       '<leader><space>',
       function()
         Snacks.picker.smart()
       end,
-      desc = 'Smart Find Files',
+      desc = 'Find [S]mart',
     },
-    -- {
-    --   '<leader>,',
-    --   function()
-    --     Snacks.picker.buffers()
-    --   end,
-    --   desc = 'Buffers',
-    -- },
-    {
-      '<leader>fw',
-      function()
-        Snacks.picker.grep()
-      end,
-      desc = 'Find Word',
-    },
-    {
-      '<leader>:',
-      function()
-        Snacks.picker.command_history()
-      end,
-      desc = 'Command History',
-    },
-    -- {
-    --   '<leader>n',
-    --   function()
-    --     Snacks.picker.notifications()
-    --   end,
-    --   desc = 'Notification History',
-    -- },
-    -- {
-    --   '<leader>e',
-    --   function()
-    --     Snacks.explorer()
-    --   end,
-    --   desc = 'File Explorer',
-    -- },
+
     -- find
     {
       '<leader>fb',
       function()
         Snacks.picker.buffers()
       end,
-      desc = 'Buffers',
-    },
-    {
-      '<leader>fc',
-      function()
-        Snacks.picker.files { cwd = vim.fn.stdpath 'config' }
-      end,
-      desc = 'Find Config File',
-    },
-    {
-      '<leader>ff',
-      function()
-        Snacks.picker.files()
-      end,
-      desc = 'Find Files',
+      desc = 'Find [b]uffers',
     },
     {
       '<leader>fg',
       function()
-        Snacks.picker.git_files()
+        Snacks.picker.grep()
       end,
-      desc = 'Find Git Files',
+      desc = 'Find [g]rep',
     },
     {
-      '<leader>fp',
+      '<leader>fw',
       function()
-        Snacks.picker.projects()
+        Snacks.picker.grep_word()
       end,
-      desc = 'Projects',
-    },
-    {
-      '<leader>fo',
-      function()
-        Snacks.picker.recent()
-      end,
-      desc = 'Find Old Files',
-    },
-    -- git
-    -- {
-    --   '<leader>gb',
-    --   function()
-    --     Snacks.picker.git_branches()
-    --   end,
-    --   desc = 'Git Branches',
-    -- },
-    -- {
-    --   '<leader>gl',
-    --   function()
-    --     Snacks.picker.git_log()
-    --   end,
-    --   desc = 'Git Log',
-    -- },
-    -- {
-    --   '<leader>gL',
-    --   function()
-    --     Snacks.picker.git_log_line()
-    --   end,
-    --   desc = 'Git Log Line',
-    -- },
-    -- {
-    --   '<leader>gs',
-    --   function()
-    --     Snacks.picker.git_status()
-    --   end,
-    --   desc = 'Git Status',
-    -- },
-    -- {
-    --   '<leader>gS',
-    --   function()
-    --     Snacks.picker.git_stash()
-    --   end,
-    --   desc = 'Git Stash',
-    -- },
-    -- {
-    --   '<leader>gd',
-    --   function()
-    --     Snacks.picker.git_diff()
-    --   end,
-    --   desc = 'Git Diff (Hunks)',
-    -- },
-    -- {
-    --   '<leader>gf',
-    --   function()
-    --     Snacks.picker.git_log_file()
-    --   end,
-    --   desc = 'Git Log File',
-    -- },
-    -- Grep
-    {
-      '<leader>fl',
-      function()
-        Snacks.picker.lines()
-      end,
-      desc = 'Find Buffer Lines',
+      desc = 'Find current [w]ord',
     },
     {
       '<leader>fW',
       function()
         Snacks.picker.grep_buffers()
       end,
-      desc = 'Grep Open Buffers',
-    },
-    -- {
-    --   '<leader>sw',
-    --   function()
-    --     Snacks.picker.grep_word()
-    --   end,
-    --   desc = 'Visual selection or word',
-    --   mode = { 'n', 'x' },
-    -- },
-    -- search
-    {
-      '<leader>s"',
-      function()
-        Snacks.picker.registers()
-      end,
-      desc = 'Registers',
+      desc = 'Open Buffers Find [W]ord',
     },
     {
-      '<leader>s/',
-      function()
-        Snacks.picker.search_history()
-      end,
-      desc = 'Search History',
-    },
-    {
-      '<leader>sa',
-      function()
-        Snacks.picker.autocmds()
-      end,
-      desc = 'Autocmds',
-    },
-    {
-      '<leader>sc',
-      function()
-        Snacks.picker.command_history()
-      end,
-      desc = 'Command History',
-    },
-    {
-      '<leader>sC',
-      function()
-        Snacks.picker.commands()
-      end,
-      desc = 'Commands',
-    },
-    {
-      '<leader>sd',
+      '<leader>fd',
       function()
         Snacks.picker.diagnostics()
       end,
-      desc = 'Diagnostics',
+      desc = 'Find [d]iagnostics',
     },
     {
-      '<leader>sD',
+      '<leader>fD',
       function()
         Snacks.picker.diagnostics_buffer()
       end,
-      desc = 'Buffer Diagnostics',
+      desc = 'Open buffers [D]iagnostics',
     },
     {
-      '<leader>sh',
+      '<leader>fh',
       function()
         Snacks.picker.help()
       end,
-      desc = 'Help Pages',
+      desc = 'Find [H]elps',
     },
     {
-      '<leader>sH',
-      function()
-        Snacks.picker.highlights()
-      end,
-      desc = 'Highlights',
-    },
-    {
-      '<leader>si',
+      '<leader>fi',
       function()
         Snacks.picker.icons()
       end,
-      desc = 'Icons',
+      desc = 'Find [i]cons',
     },
     {
-      '<leader>sj',
+      '<leader>fj',
       function()
         Snacks.picker.jumps()
       end,
-      desc = 'Jumps',
+      desc = 'Find [j]umps list',
     },
     {
-      '<leader>sk',
+      '<leader>fl',
+      function()
+        Snacks.picker.lines()
+      end,
+      desc = 'Find [l]ines',
+    },
+    {
+      '<leader>ff',
+      function()
+        Snacks.picker.files()
+      end,
+      desc = 'Find [f]iles',
+    },
+    {
+      '<leader>fo',
+      function()
+        Snacks.picker.recent()
+      end,
+      desc = 'Find [O]ld Files',
+    },
+    {
+      '<leader>fk',
       function()
         Snacks.picker.keymaps()
       end,
-      desc = 'Keymaps',
-    },
-    {
-      '<leader>sl',
-      function()
-        Snacks.picker.loclist()
-      end,
-      desc = 'Location List',
-    },
-    {
-      '<leader>sm',
-      function()
-        Snacks.picker.marks()
-      end,
-      desc = 'Marks',
-    },
-    {
-      '<leader>sM',
-      function()
-        Snacks.picker.man()
-      end,
-      desc = 'Man Pages',
-    },
-    {
-      '<leader>sp',
-      function()
-        Snacks.picker.lazy()
-      end,
-      desc = 'Search for Plugin Spec',
-    },
-    {
-      '<leader>sq',
-      function()
-        Snacks.picker.qflist()
-      end,
-      desc = 'Quickfix List',
+      desc = 'Find [k]eymaps',
     },
     {
       '<leader>fr',
       function()
         Snacks.picker.resume()
       end,
-      desc = 'Resume',
-    },
-    {
-      '<leader>su',
-      function()
-        Snacks.picker.undo()
-      end,
-      desc = 'Undo History',
-    },
-    {
-      '<leader>uC',
-      function()
-        Snacks.picker.colorschemes()
-      end,
-      desc = 'Colorschemes',
+      desc = 'Find [r]esume',
     },
     -- LSP
     {
@@ -312,50 +120,77 @@ return {
       function()
         Snacks.picker.lsp_definitions()
       end,
-      desc = 'Goto Definition',
+      desc = 'Go to [d]efinition',
     },
     {
-      'gD',
+      'gi',
       function()
-        Snacks.picker.lsp_declarations()
+        Snacks.picker.implementations()
       end,
-      desc = 'Goto Declaration',
+      desc = 'Go to [i]mplementations',
     },
     {
       'gr',
       function()
         Snacks.picker.lsp_references()
       end,
-      nowait = true,
-      desc = 'References',
+      desc = 'Go to [r]eferences',
     },
     {
-      'gI',
-      function()
-        Snacks.picker.lsp_implementations()
-      end,
-      desc = 'Goto Implementation',
-    },
-    {
-      'gy',
-      function()
-        Snacks.picker.lsp_type_definitions()
-      end,
-      desc = 'Goto T[y]pe Definition',
-    },
-    {
-      '<leader>ss',
+      'gs',
       function()
         Snacks.picker.lsp_symbols()
       end,
-      desc = 'LSP Symbols',
+      desc = 'Go to [s]ymbols',
     },
     {
-      '<leader>sS',
+      'gS',
       function()
-        Snacks.picker.lsp_workspace_symbols()
+        Snacks.picker.lsp_wordspace_symbols()
       end,
-      desc = 'LSP Workspace Symbols',
+      desc = 'Go to [S]ymbols in Workspace',
+    },
+    -- Neovim related
+    {
+      '<leader>fc',
+      function()
+        Snacks.picker.files { cwd = vim.fn.stdpath 'config' }
+      end,
+      desc = 'Neovim Find [c]onfig File',
+    },
+    {
+      '<leader>:',
+      function()
+        Snacks.picker.command_history()
+      end,
+      desc = 'Neovim Command[:] History',
+    },
+    {
+      "<leader>'",
+      function()
+        Snacks.picker.registers()
+      end,
+      desc = "Neovim Registers[']",
+    },
+    {
+      '<leader>nc',
+      function()
+        Snacks.picker.commands()
+      end,
+      desc = 'Neovim [c]ommands',
+    },
+    {
+      '<leader>nt',
+      function()
+        Snacks.picker.colorschemes()
+      end,
+      desc = 'Neovim [t]hemes',
+    },
+    {
+      '\\',
+      function()
+        Snacks.explorer()
+      end,
     },
   },
 }

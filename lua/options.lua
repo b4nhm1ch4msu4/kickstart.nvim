@@ -2,7 +2,7 @@ vim.o.number = true
 vim.o.relativenumber = true
 -- vim.o.numberwidth = 4
 vim.o.mouse = ''
-vim.o.showmode = false
+vim.o.showmode = true
 
 vim.schedule(function()
   vim.o.clipboard = 'unnamedplus'
