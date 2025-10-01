@@ -22,11 +22,11 @@ return {
     --   desc = 'Buffers',
     -- },
     {
-      '<leader>/',
+      '<leader>fw',
       function()
         Snacks.picker.grep()
       end,
-      desc = 'Grep',
+      desc = 'Find Word',
     },
     {
       '<leader>:',
@@ -86,11 +86,11 @@ return {
       desc = 'Projects',
     },
     {
-      '<leader>fr',
+      '<leader>fo',
       function()
         Snacks.picker.recent()
       end,
-      desc = 'Recent',
+      desc = 'Find Old Files',
     },
     -- git
     -- {
@@ -144,34 +144,27 @@ return {
     -- },
     -- Grep
     {
-      '<leader>sb',
+      '<leader>fl',
       function()
         Snacks.picker.lines()
       end,
-      desc = 'Buffer Lines',
+      desc = 'Find Buffer Lines',
     },
     {
-      '<leader>sB',
+      '<leader>fW',
       function()
         Snacks.picker.grep_buffers()
       end,
       desc = 'Grep Open Buffers',
     },
-    {
-      '<leader>sg',
-      function()
-        Snacks.picker.grep()
-      end,
-      desc = 'Grep',
-    },
-    {
-      '<leader>sw',
-      function()
-        Snacks.picker.grep_word()
-      end,
-      desc = 'Visual selection or word',
-      mode = { 'n', 'x' },
-    },
+    -- {
+    --   '<leader>sw',
+    --   function()
+    --     Snacks.picker.grep_word()
+    --   end,
+    --   desc = 'Visual selection or word',
+    --   mode = { 'n', 'x' },
+    -- },
     -- search
     {
       '<leader>s"',
@@ -293,7 +286,7 @@ return {
       desc = 'Quickfix List',
     },
     {
-      '<leader>sR',
+      '<leader>fr',
       function()
         Snacks.picker.resume()
       end,
