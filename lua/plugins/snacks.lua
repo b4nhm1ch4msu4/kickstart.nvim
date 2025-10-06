@@ -116,35 +116,35 @@ return {
     },
     -- LSP
     {
-      'gd',
+      'grd',
       function()
         Snacks.picker.lsp_definitions()
       end,
       desc = 'Go to [d]efinition',
     },
     {
-      'gi',
+      'gri',
       function()
         Snacks.picker.implementations()
       end,
       desc = 'Go to [i]mplementations',
     },
     {
-      'gr',
+      'grr',
       function()
         Snacks.picker.lsp_references()
       end,
       desc = 'Go to [r]eferences',
     },
     {
-      'gs',
+      'grs',
       function()
         Snacks.picker.lsp_symbols()
       end,
       desc = 'Go to [s]ymbols',
     },
     {
-      'gS',
+      'grS',
       function()
         Snacks.picker.lsp_wordspace_symbols()
       end,
