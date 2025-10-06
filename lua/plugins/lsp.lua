@@ -150,7 +150,7 @@ return {
           end,
         },
       }
-      local servers = { 'lua_ls', 'pylsp', 'robotframework_ls' }
+      local servers = { 'lua_ls', 'pylsp', 'robotcode', 'bashls' }
       vim.lsp.enable(servers)
     end,
   },
