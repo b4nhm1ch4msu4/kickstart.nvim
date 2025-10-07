@@ -1,7 +1,7 @@
 return {
   'zootedb0t/citruszest.nvim',
   -- 'catppuccin/nvim',
-  -- 'olimorris/onedarkpro.nvim',
+  'olimorris/onedarkpro.nvim',
   -- 'navarasu/onedark.nvim',
   -- 'folke/tokyonight.nvim',
   -- 'rebelot/kanagawa.nvim',

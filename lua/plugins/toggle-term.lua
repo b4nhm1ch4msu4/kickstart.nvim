@@ -6,6 +6,7 @@ return {
   opts = {
     open_mapping = [[<A-i>]],
     direction = 'float',
+    shell = 'pwsh.exe',
     float_opts = {
       border = 'curved', -- 'single' | 'double' | 'shadow' | 'curved' | ... other options supported by win open
       winblend = 0,
