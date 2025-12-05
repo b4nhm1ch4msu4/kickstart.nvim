@@ -19,7 +19,7 @@ return { -- Autoformat
       -- Disable "format_on_save lsp_fallback" for languages that don't
       -- have a well standardized coding style. You can add additional
       -- languages here or re-enable it for the disabled ones.
-      local disable_filetypes = { c = true, cpp = true, robot = true }
+      local disable_filetypes = { c = true, cpp = true, robot = true, python = true }
       if disable_filetypes[vim.bo[bufnr].filetype] then
         return nil
       else
@@ -34,7 +34,7 @@ return { -- Autoformat
         command = 'robocop',
         -- A list of strings, or a function that returns a list of strings
         -- Return a single string instead of a list to run the command in a shell
-        args = { 'format', '$FILENAME' },
+        args = { 'format', '--configure', ' NormalizeTags.enabled=False', '$FILENAME' },
         stdin = false,
         range_args = function(self, ctx)
           return { 'format', '--start-line', ctx.range.start[1], '--end-line', ctx.range['end'][1], '$FILENAME' }
@@ -44,6 +44,7 @@ return { -- Autoformat
     formatters_by_ft = {
       lua = { 'stylua' },
       robot = { 'robocop' },
+      -- python = { 'black' },
     },
   },
 }

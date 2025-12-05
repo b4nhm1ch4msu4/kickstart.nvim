@@ -35,6 +35,10 @@ vim.o.softtabstop = 4
 -- Float window border
 vim.o.winborder = 'bold'
 
+-- Change shell
+-- vim.opt.shell = 'pwsh.exe'
+-- vim.opt.shellcmdflag = '--'
+
 -- disable some default providers
 vim.g.loaded_node_provider = 0
 vim.g.loaded_python3_provider = 0

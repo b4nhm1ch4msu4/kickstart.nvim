@@ -36,17 +36,18 @@ return { -- Autocompletion
       -- <c-e>: Hide menu
       -- <c-k>: Toggle signature help
       preset = 'default',
-      ['<C-y>'] = {
-        function(cmp)
-          if vim.bo.filetype == 'robot' or vim.bo.filetype == 'resource' then
-            return cmp.select_next { count = 0 }
-          else
-            return nil
-          end
-        end,
-        'select_and_accept',
-        'fallback',
-      },
+      -- ['<C-y>'] = {
+      --   function(cmp)
+      --     if vim.bo.filetype == 'robot' or vim.bo.filetype == 'resource' then
+      --       return cmp.select_next { count = 0 }
+      --     else
+      --       return nil
+      --     end
+      --   end,
+      --   'select_and_accept',
+      --   'fallback',
+      -- },
+      ['C-y'] = { 'accept' },
       ['<Tab>'] = {},
       ['<S-Tab>'] = {},
       ['<PageUp>'] = { 'snippet_forward', 'fallback' },

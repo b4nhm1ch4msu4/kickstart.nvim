@@ -16,13 +16,7 @@ return {
     event = 'FileType',
     dependencies = {
       { 'mason-org/mason.nvim', opts = {} },
-      -- 'mason-org/mason-lspconfig.nvim',
-      -- 'WhoIsSethDaniel/mason-tool-installer.nvim',
-
-      -- Useful status updates for LSP.
       { 'j-hui/fidget.nvim', opts = {} },
-
-      -- Allows extra capabilities provided by blink.cmp
       'saghen/blink.cmp',
     },
     config = function()
@@ -113,6 +107,11 @@ return {
         },
       }
       local servers = { 'lua_ls', 'pylsp', 'robotframework_ls', 'bashls' }
+      vim.lsp.config('robotframework_ls', {
+        on_attach = function(client, bufnr)
+          vim.cmd 'setlocal commentstring=#\\ %s'
+        end,
+      })
       vim.lsp.enable(servers)
     end,
   },

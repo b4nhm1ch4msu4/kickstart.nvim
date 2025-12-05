@@ -1,6 +1,7 @@
 return {
   'folke/snacks.nvim',
   lazy = false,
+  -- enabled = false,
   opts = {
     picker = {},
     indent = {},
@@ -23,27 +24,27 @@ return {
       end,
       desc = 'Find [b]uffers',
     },
-    {
-      '<leader>fg',
-      function()
-        Snacks.picker.grep()
-      end,
-      desc = 'Find [g]rep',
-    },
-    {
-      '<leader>fw',
-      function()
-        Snacks.picker.grep_word()
-      end,
-      desc = 'Find current [w]ord',
-    },
-    {
-      '<leader>fW',
-      function()
-        Snacks.picker.grep_buffers()
-      end,
-      desc = 'Open Buffers Find [W]ord',
-    },
+    -- {
+    --   '<leader>fg',
+    --   function()
+    --     Snacks.picker.grep()
+    --   end,
+    --   desc = 'Find [g]rep',
+    -- },
+    -- {
+    --   '<leader>fw',
+    --   function()
+    --     Snacks.picker.grep_word()
+    --   end,
+    --   desc = 'Find current [w]ord',
+    -- },
+    -- {
+    --   '<leader>fW',
+    --   function()
+    --     Snacks.picker.grep_buffers()
+    --   end,
+    --   desc = 'Open Buffers Find [W]ord',
+    -- },
     {
       '<leader>fd',
       function()
